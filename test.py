@@ -1,13 +1,9 @@
-import smtplib
+import yagmail
 
-email = 'seesmwork@gmail.com'
-password = 'p0zBE5e146898992'
+from_email = 'seesvalorant@gmail.com'
+to_email = 'seesmwork@gmail.com'
+password = ',X)kC9-)}svS"n_d'
 
-to_email = 'your_email@gmail.com'
-message = 'Subject: {}\n\n{}'.format('Hi', 'Hello from Python!')
-
-server = smtplib.SMTP('smtp.gmail.com', 587)
-server.starttls()
-server.login(email, password)
-server.sendmail(email, to_email, message)
-server.quit()
+yag = yagmail.SMTP(from_email, password)
+yag.send(to=to_email, subject="Hi",
+         contents="Hello, this is a test email from Python!")
